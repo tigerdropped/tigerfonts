@@ -3,54 +3,112 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Tigerfonts</title>
-  <link rel="stylesheet" href="style.css">
+  <title>Tigerfonts - janitor font list</title>
   <link rel="stylesheet" href="fonts.css">
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
-  <header>
+  
+  <header class="site-header">
     <h1>Tigerfonts</h1>
-    <p>Visualize fonts for profile customization</p>
+    <h3>the complete font library.</h3>
+    <div class="socials-wrapper">
+      <a href="https://janitorai.com/profiles/00affc51-fe74-4ed9-8ca3-5972411eeb7e_profile-of-tigerdropped" target="_blank" rel="noopener noreferrer" aria-label="Visit janitor profile">
+        profile
+      </a>
+      <a href="https://liberapay.com/tigerdropped/" target="_blank" rel="noopener noreferrer" aria-label="Donate through Liberapay">
+        donate
+      </a>
+      <a href="https://payhip.com/tigerdropped" target="_blank" rel="noopener noreferrer" aria-label="Payhip shop">
+        css shop
+      </a>
+    </div>
   </header>
-
-  <section class="controls">
-    <input type="text" id="preview-input" placeholder="Type custom preview text...">
-    
-    <div class="slider-container">
-      <label for="font-size">Font Size:</label>
-      <input type="range" id="font-size" min="12" max="48" value="20">
-      <span id="size-display">20px</span>
-    </div>
-
-    <div class="filter-buttons">
-      <button class="filter-btn active" data-category="all">All</button>
-      <button class="filter-btn" data-category="sans-serif">Sans-serif</button>
-      <button class="filter-btn" data-category="serif">Serif</button>
-    </div>
-  </section>
-
-  <main class="font-grid">
-    <div class="font-card" data-category="sans-serif">
-      <div class="card-header">
-        <h2>Lexend</h2>
-        <span class="badge">Sans-serif</span>
+  
+  <div class="layout-wrapper">
+    <aside id="sidebar">
+      <div class="sidebar-header">
+        <h2>Controls</h2>
+        <button id="close-sidebar" class="btn-close" aria-label="Close controls">✕</button>
       </div>
-      <p class="font-preview" style="font-family: 'Lexend', sans-serif;">
-        The quick brown fox jumps over the lazy dog.
-      </p>
-    </div>
 
-    <div class="font-card" data-category="serif">
-      <div class="card-header">
-        <h2>DM Serif Text</h2>
-        <span class="badge">Serif</span>
+      <div class="control-group">
+        <label for="custom-text">Preview Text</label>
+        <textarea id="custom-text" rows="3" placeholder="Start writing...">The quick brown fox jumps over the lazy dog.</textarea>
       </div>
-      <p class="font-preview" style="font-family: 'DM Serif Text', serif;">
-        The quick brown fox jumps over the lazy dog.
-      </p>
-    </div>
-  </main>
+
+      <div class="control-group">
+        <label for="font-size">Size: <span id="size-value">24px</span></label>
+        <input type="range" id="font-size" min="12" max="72" value="24">
+      </div>
+
+      <div class="control-group">
+        <label for="font-weight">Weight: <span id="weight-value">400</span></label>
+        <input type="range" id="font-weight" min="100" max="1000" step="100" value="400">
+      </div>
+
+      <div class="control-group">
+        <label for="letter-spacing">Letter Spacing: <span id="letter-spacing-value">0px</span></label>
+        <input type="range" id="letter-spacing" min="-25" max="25" value="0">
+      </div>
+
+      <div class="control-group">
+        <label for="line-height">Line Height: <span id="line-height-value">1.35</span></label>
+        <input type="range" id="line-height" min="0.7" max="3" step="0.05" value="1.35">
+      </div>
+
+      <div class="control-group">
+        <label for="font-style">Style</label>
+        <select id="font-style">
+          <option value="normal">Normal</option>
+          <option value="italic">Italic</option>
+          <option value="oblique">Oblique</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <label for="font-variant">Variant</label>
+        <select id="font-variant">
+          <option value="normal">Normal</option>
+          <option value="small-caps">Small Caps</option>
+        </select>
+      </div>
+
+      <div class="control-group">
+        <label>Categories</label>
+        <div class="category-filters">
+          <button class="category active">All</button>
+          <button class="category">Serif</button>
+          <button class="category">Sans-Serif</button>
+          <button class="category">Display</button>
+          <button class="category">Cursive</button>
+          <button class="category">Decorative</button>
+          <button class="category">Pixel</button>
+          <button class="category">System</button>
+        </div>
+      </div>
+    </aside>
+
+    <main>
+      <div class="top-controls">
+        <button id="toggle-sidebar" class="btn">Filters</button>
+
+        <div class="view-toggle-group">
+          <button id="btn-list" class="btn active" aria-label="Switch to list layout">≡ List</button>
+          <button id="btn-grid" class="btn" aria-label="Switch to grid layout">⊞ Grid</button>
+        </div>
+      </div>
+
+      <div id="font-container" class="font-container card-list">
+        <!-- JS generates font cards here -->
+      </div>
+    </main>
+  </div>
+
+  <footer>
+    <h4>© tigerdropped.</h4>
+    <h4>not affiliated with janitorai</h4>
+  </footer>
 
   <script src="script.js"></script>
 </body>
