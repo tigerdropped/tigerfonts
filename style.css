@@ -10,7 +10,7 @@
       --border-color: #444;
       --accent-color: #ff5252;
 
-      --font-main: Inter, sans-serif;
+      --font-main: Poppins, sans-serif;
       --font-display: Fraunces, serif;
     }
 
@@ -26,7 +26,7 @@
       color: var(--text-main);
       display: flex;
       flex-direction: column;
-      height: 100vh;
+      height: 100dvh;
       overflow: hidden;
     }
 
@@ -81,7 +81,7 @@
       width: 300px;
       background: var(--card-bg);
       border-right: 1px solid var(--border-color);
-      padding: 1.5rem;
+      padding: 0 1.5rem;
       display: flex;
       flex-direction: column;
       gap: 1.5rem;
@@ -99,6 +99,10 @@
     }
 
     .sidebar-header {
+      background: var(--card-bg);
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -138,6 +142,54 @@
       resize: vertical;
     }
 
+    textarea {
+        min-height: 3rem;
+        max-height: 10rem;
+        background: var(--card-bg);
+        color: var(--text-main);
+    }
+
+    textarea:focus, input[type="text"]:focus {
+      outline: none;
+      border-color: var(--accent-color);
+      box-shadow: 0 0 0 3px #ff525240;
+    }
+
+    input[type="range"] {
+      accent-color: var(--accent-color);
+      cursor: pointer;
+    }
+
+    select {
+      appearance: none;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+
+      width: 100%;
+      font-family: inherit;
+      font-size: 0.95rem;
+      color: var(--text-main, #0f172a);
+      background-color: var(--card-bg, #ffffff);
+      border: 1px solid var(--border-color, #e2e8f0);
+      border-radius: 8px;
+      padding: 0.65rem 2.5rem 0.65rem 0.85rem;
+      cursor: pointer;
+
+    /* Embedded Inline SVG Chevron Arrow */
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='[http://www.w3.org/2000/svg](http://www.w3.org/2000/svg)' fill='none' viewBox='0 0 24 24' stroke='%2064748b'%3E%3Cpath stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='M19 9l-7 7-7-7'%3E%3C/path%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 0.75rem center;
+      background-size: 1rem;
+
+      transition: border-color 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    select:focus-visible {
+      outline: none;
+      border-color: var(--accent-color, #3b82f6);
+      box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.2);
+    }
+
     main {
       flex: 1;
       display: flex;
@@ -166,9 +218,12 @@
       border: 1px solid var(--border-color);
       border-radius: 999px;
       color: var(--text-main);
-      padding: 0.5rem 1rem;
+      padding: .75rem;
       cursor: pointer;
-      font-weight: 500;
+      font-family: inherit;
+      line-height: 0.7;
+      font-size: 1rem;
+      font-weight: 600;
       transition: all 0.2s;
     }
 
@@ -193,8 +248,10 @@
       background: var(--card-bg);
       border: 1px solid var(--border-color);
       color: var(--text-main);
-      padding: 0.4rem 0.8rem;
+      padding: 0.75rem;
       cursor: pointer;
+      font-family: inherit;
+      line-height: 0.7;
       font-size: 0.85rem;
       border-radius: 999px;
     }
