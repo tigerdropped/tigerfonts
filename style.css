@@ -1,0 +1,60 @@
+/* Define your color palette and variables here once */
+:root {
+  --bg-color: #1a1e24;
+  --panel-bg: #22272e;
+  --text-main: #cdd9e5;
+  --text-muted: #768390;
+  --accent: #539bf5;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-main);
+  font-family: system-ui, -apple-system, sans-serif;
+  margin: 0;
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+main {
+  width: 100%;
+  max-width: 800px;
+}
+
+.font-card {
+  background-color: var(--panel-bg);
+  border: 1px solid #373e47;
+  border-radius: 8px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+.font-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #373e47;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.font-info h2 {
+  margin: 0;
+  font-size: 1.25rem;
+}
+
+.tag {
+  background-color: #373e47;
+  padding: 0.25rem 0.75rem;
+  border-radius: 99px;
+  font-size: 0.85rem;
+}
+
+/* This targets the inline variable from the HTML */
+.preview-text {
+  font-family: var(--preview-font);
+  font-size: 1.5rem;
+  margin: 0;
+}

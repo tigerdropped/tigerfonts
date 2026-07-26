@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>tigerfonts interactive list</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="fonts.css">
+</head>
+<body>
+
+  <header>
+    <h1>tigerfonts</h1>
+    <p>The be-all, end-all solution to your font-related issues.</p>
+  </header>
+
+  <main>
+    <!-- We can use an inline CSS variable to change the preview font without writing new CSS rules! -->
+    <div class="font-card" style="--preview-font: Lexend, sans-serif;">
+      <div class="font-info">
+        <h2>Lexend</h2>
+        <span class="tag">Sans-serif</span>
+      </div>
+      <p class="preview-text" contenteditable="true">The quick brown fox jumps over the lazy dog.</p>
+    </div>
+
+    <div class="font-card" style="--preview-font: 'DM Serif Text', serif;">
+      <div class="font-info">
+        <h2>DM Serif Text</h2>
+        <span class="tag">Serif</span>
+      </div>
+      <p class="preview-text" contenteditable="true">The quick brown fox jumps over the lazy dog.</p>
+    </div>
+  </main>
+
+</body>
+</html>
