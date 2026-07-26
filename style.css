@@ -10,8 +10,8 @@
       --border-color: #444;
       --accent-color: #ff5252;
 
-      --font-main: 'Inter', sans-serif;
-      --font-display: 'Fraunces', serif;
+      --font-main: Inter, sans-serif;
+      --font-display: Fraunces, serif;
     }
 
     * {
