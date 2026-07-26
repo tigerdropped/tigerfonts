@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>tigerfonts interactive list</title>
+  <title>Tigerfonts</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="fonts.css">
 </head>
@@ -11,27 +11,47 @@
 
   <header>
     <h1>Tigerfonts</h1>
-    <p>The be-all, end-all solution to your font-related issues.</p>
+    <p>Visualize fonts for profile customization</p>
   </header>
 
-  <main>
-    <!-- We can use an inline CSS variable to change the preview font without writing new CSS rules! -->
-    <div class="font-card" style="--preview-font: Lexend, sans-serif;">
-      <div class="font-info">
-        <h2>Lexend</h2>
-        <span class="tag">Sans-serif</span>
-      </div>
-      <p class="preview-text" contenteditable="true">The quick brown fox jumps over the lazy dog.</p>
+  <section class="controls">
+    <input type="text" id="preview-input" placeholder="Type custom preview text...">
+    
+    <div class="slider-container">
+      <label for="font-size">Font Size:</label>
+      <input type="range" id="font-size" min="12" max="48" value="20">
+      <span id="size-display">20px</span>
     </div>
 
-    <div class="font-card" style="--preview-font: 'DM Serif Text', serif;">
-      <div class="font-info">
-        <h2>DM Serif Text</h2>
-        <span class="tag">Serif</span>
+    <div class="filter-buttons">
+      <button class="filter-btn active" data-category="all">All</button>
+      <button class="filter-btn" data-category="sans-serif">Sans-serif</button>
+      <button class="filter-btn" data-category="serif">Serif</button>
+    </div>
+  </section>
+
+  <main class="font-grid">
+    <div class="font-card" data-category="sans-serif">
+      <div class="card-header">
+        <h2>Lexend</h2>
+        <span class="badge">Sans-serif</span>
       </div>
-      <p class="preview-text" contenteditable="true">The quick brown fox jumps over the lazy dog.</p>
+      <p class="font-preview" style="font-family: 'Lexend', sans-serif;">
+        The quick brown fox jumps over the lazy dog.
+      </p>
+    </div>
+
+    <div class="font-card" data-category="serif">
+      <div class="card-header">
+        <h2>DM Serif Text</h2>
+        <span class="badge">Serif</span>
+      </div>
+      <p class="font-preview" style="font-family: 'DM Serif Text', serif;">
+        The quick brown fox jumps over the lazy dog.
+      </p>
     </div>
   </main>
 
+  <script src="script.js"></script>
 </body>
 </html>
