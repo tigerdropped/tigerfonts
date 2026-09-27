@@ -20,6 +20,7 @@
       { name: "Raleway", family: "'Raleway', sans-serif", category: "Sans-Serif" },
       { name: "Roboto", family: "'Roboto', sans-serif", category: "Sans-Serif" },
       { name: "Roboto Condensed", family: "'Roboto Condensed', sans-serif", category: "Sans-Serif" },
+      { name: "Share Tech", family: "'Share Tech', sans-serif", category: "Sans-Serif" },
 
       { name: "Abril Fatface", family: "'Abril Fatface', serif", category: "Serif" },
       { name: "Aladin", family: "'Aladin', serif", category: "Serif" },
@@ -51,7 +52,6 @@
 
       { name: "Courier Prime", family: "'Courier Prime', monospace", category: "Monospace" },
       { name: "Cutive Mono", family: "'Cutive Mono', monospace", category: "Monospace" },
-      { name: "Share Tech", family: "'Share Tech', monospace", category: "Monospace" },
       { name: "Special Elite", family: "'Special Elite', monospace", category: "Monospace" },
 
       { name: "Cinzel Decorative", family: "'Cinzel Decorative', decorative", category: "Decorative"},
@@ -98,6 +98,7 @@
       const lineHeightInput = document.getElementById('line-height');
       const fontStyleInput = document.getElementById('font-style');
       const fontVariantInput = document.getElementById('font-variant');
+      const textTransformInput = document.getElementById('text-transform');
       const sizeValue = document.getElementById('size-value');
       const weightValue = document.getElementById('weight-value');
 
@@ -143,7 +144,7 @@
         });
       });
 
-      // #region FONT SIZE, WEIGHT, STYLE, VARIANT SLIDERS
+      // #region FONT SIZE, WEIGHT SLIDERS. STYLE, VARIANT AND TEXT-TRANSFORM SELECTORS
       fontSizeInput.addEventListener('input', (e) => {
         sizeValue.textContent = `${e.target.value}px`;
         document.documentElement.style.setProperty('--preview-size', `${e.target.value}px`);
@@ -172,6 +173,10 @@
 
       fontVariantInput.addEventListener('change', (e) => {
         document.documentElement.style.setProperty('--preview-variant', e.target.value);
+      });
+
+      textTransformInput.addEventListener('change', (e) => {
+        document.documentElement.style.setProperty('--preview-text-transform', e.target.value);
       });
 
       // #region SIDEBAR CONTROLS
